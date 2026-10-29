@@ -1,14 +1,55 @@
-import { Fragment } from "react";
+import { Fragment, useState } from "react";
 import { motion } from "motion/react";
 import { CTA, ease } from "./ui.jsx";
 import { VIDEO_URL } from "../config.js";
 
 const HL = ["exatamente", "isso", "promoveram"];
 
-// Player ilustrativo da VSL. Quando houver o vídeo, preencher VIDEO_URL em config.js.
+function getYouTubeId(url) {
+  if (!url) return null;
+  const match = url.match(/(?:youtu\.be\/|youtube\.com\/(?:embed\/|v\/|watch\?v=|watch\?.+&v=))([\w-]{11})/);
+  return match ? match[1] : null;
+}
+
+// Player da VSL. Quando clicado, inicia o vídeo embutido com autoplay mantendo o usuário na página.
 function Player() {
+  const [isPlaying, setIsPlaying] = useState(false);
+  const ytId = getYouTubeId(VIDEO_URL);
+
+  if (isPlaying && ytId) {
+    return (
+      <div className="player player-active">
+        <div className="player-screen" style={{ overflow: "hidden" }}>
+          <iframe
+            src={`https://www.youtube-nocookie.com/embed/${ytId}?autoplay=1&rel=0&modestbranding=1`}
+            title="Como ser promovido na logística | Carlos Martins"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+            style={{ position: "absolute", inset: 0, width: "100%", height: "100%", border: 0 }}
+          />
+        </div>
+      </div>
+    );
+  }
+
+  const handleClick = (e) => {
+    if (ytId) {
+      e.preventDefault();
+      setIsPlaying(true);
+    }
+  };
+
   const Tag = VIDEO_URL ? "a" : "div";
-  const props = VIDEO_URL ? { href: VIDEO_URL, target: "_blank", rel: "noreferrer", "aria-label": "Assistir ao vídeo" } : {};
+  const props = VIDEO_URL
+    ? {
+        href: VIDEO_URL,
+        target: "_blank",
+        rel: "noreferrer",
+        "aria-label": "Assistir ao vídeo",
+        onClick: handleClick,
+      }
+    : {};
+
   return (
     <Tag className="player" {...props}>
       <div className="player-screen">

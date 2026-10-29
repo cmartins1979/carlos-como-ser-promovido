@@ -10,7 +10,7 @@ export const WHATSAPP_URL = "https://wa.me/555193134247?text=" + encodeURICompon
 export const CNPJ = "";
 
 // Vídeo de apresentação do hero (link do Vimeo, YouTube, Panda...). Vazio, o hero mostra só a foto, sem botão de play.
-export const VIDEO_URL = "";
+export const VIDEO_URL = "https://youtu.be/VMHX4iPaRo8";
 
 export const PRECO = "297";
 // Bloco de preço: parcela em destaque e valor à vista pequeno embaixo.
