@@ -103,7 +103,7 @@ strong { font-weight: 800; }
 .player { display: block; width: min(860px, 100%); margin: 0 auto 14px; border-radius: 18px; overflow: hidden; background: #05080f; box-shadow: 0 40px 90px -30px rgba(13, 21, 38, 0.75); border: 1px solid rgba(13, 21, 38, 0.2); cursor: pointer; text-decoration: none; color: #fff; }
 .player-screen { position: relative; aspect-ratio: 16 / 9; display: grid; place-items: center; background: #05080f; overflow: hidden; }
 .player-thumb { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 1; }
-.player-overlay { position: absolute; inset: 0; z-index: 2; background: radial-gradient(ellipse 70% 70% at 50% 40%, rgba(11, 127, 240, 0.45), transparent 70%), linear-gradient(160deg, #162447, #080e1c); opacity: 0.6; }
+.player-overlay { position: absolute; inset: 0; z-index: 2; background: radial-gradient(ellipse 70% 70% at 50% 40%, rgba(11, 127, 240, 0.45), transparent 70%), linear-gradient(160deg, #162447, #080e1c); opacity: 0.9; }
 .player-overlay::before { content: ""; position: absolute; inset: 0; background: url("/img/grid.webp") center / cover; opacity: 0.4; }
 .player-screen > :not(.player-thumb):not(.player-overlay) { position: relative; z-index: 3; }
 .player-badge { position: absolute; top: 16px; left: 16px; padding: 6px 12px; border-radius: 8px; background: var(--yellow); color: #0b0b0b; font: 800 12px var(--display); letter-spacing: 0.08em; text-transform: uppercase; }
