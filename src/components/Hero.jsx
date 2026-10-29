@@ -53,6 +53,18 @@ function Player() {
   return (
     <Tag className="player" {...props}>
       <div className="player-screen">
+        {ytId && (
+          <img
+            src={`https://img.youtube.com/vi/${ytId}/maxresdefault.jpg`}
+            onError={(e) => {
+              e.currentTarget.src = `https://img.youtube.com/vi/${ytId}/hqdefault.jpg`;
+            }}
+            alt="Prévia da VSL do Carlos"
+            className="player-thumb"
+            loading="eager"
+          />
+        )}
+        <div className="player-overlay" aria-hidden="true" />
         <span className="player-badge">Assista antes de continuar</span>
         <span className="player-play" aria-hidden="true">
           <svg viewBox="0 0 24 24" width="38" height="38"><path d="M8 5v14l11-7z" fill="currentColor" /></svg>
