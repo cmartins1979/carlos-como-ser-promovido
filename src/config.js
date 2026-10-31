@@ -1,7 +1,7 @@
 // Tudo que muda sem mexer no layout fica aqui.
 
 // Link do checkout (Hotmart, Kiwify, Eduzz...). Enquanto estiver "#oferta", o botão rola até o preço.
-export const CHECKOUT_URL = "#oferta";
+export const CHECKOUT_URL = "https://sun.eduzz.com/E05NYDR79X";
 
 // Link do WhatsApp da equipe. Formato: https://wa.me/55DDDNUMERO
 export const WHATSAPP_URL = "https://wa.me/555193134247?text=" + encodeURIComponent("Olá! Vim pela página do curso Como Ser Promovido e gostaria de tirar uma dúvida.");

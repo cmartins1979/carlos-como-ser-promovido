@@ -67,7 +67,7 @@ export function CountUp({ to, format = (n) => Math.round(n).toLocaleString("pt-B
 }
 
 // Botão que segue levemente o cursor.
-export function CTA({ children = "Quero ser promovido", href = CHECKOUT_URL, variant = "primary", className = "" }) {
+export function CTA({ children = "Quero ser promovido", href = CHECKOUT_URL, variant = "primary", className = "", ...props }) {
   const x = useMotionValue(0);
   const y = useMotionValue(0);
   const sx = useSpring(x, { stiffness: 220, damping: 16 });
@@ -89,6 +89,7 @@ export function CTA({ children = "Quero ser promovido", href = CHECKOUT_URL, var
       onPointerMove={onMove}
       onPointerLeave={reset}
       whileTap={{ scale: 0.97 }}
+      {...props}
     >
       <span className="cta-label">{children}</span>
       <span className="cta-arrow" aria-hidden="true">
